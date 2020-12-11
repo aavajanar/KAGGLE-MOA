@@ -40,9 +40,7 @@ Gradient Boost also requires:
 
 - lightgbm
 
-The Weighted Average Ensemble requires all of the above with the exception of kerastuner.
-
-TODO: add stacking ensemble.
+The Ensembles requires all of the above with the exception of kerastuner.
 
 ## Used Kernels
 
@@ -93,16 +91,17 @@ The weights are following:
 - Neural Network: 0.4
 
 ### Stacking Ensemble
-file: ``
+file: `nn-gbm-logreg-nn-stacking-moa.ipynb`
 
-TODO
+This model uses the previously made FNN, GBM and Logistic Regression models by using the predictions from those models to build a new model. This is achieved by dividing the train set into 3 parts and using 2 parts to predict the third. This is done for every part and we get the train and test set predictions. We do this 3 times, once for each model, and combine all the train set predictions with each other and then all the test set predictions with each other. Then finally we build a new model, in this case a feedforward neural network, and fit it on the new train prediction set. Then we use the test predictions to predict the final target values.
 
 ## Results
-The results were ran on both public test data and private test data on Kaggle. Performance metric is meanwise column log loss. Our initial goal was to reach 0.02 for public test data and we were hoping to reach 0.019. TODO: write conclusions after stacking ensemble!!
+The results were ran on both public test data and private test data on Kaggle. Performance metric is meanwise column log loss. Our initial goal was to reach 0.02 for public test data and we were hoping to reach 0.019. Results for all the model met our goals and the Weighted Average Ensemble even met our extended goal. From the results we can see that the results tend to improve as the model increases in complexity (from linear to boost ensemble to neural network to ensembles of previous models) with the exception of a simpler Weighted Average Ensemble outperforming the Stacking Ensemble, but that is more likely related to our implementation of the stacking ensemble than it is to the potenatial performance gain of the stacking method.
+
 | Model  | Private | Public |
 | ------------- | ------------- | ------------- |
 | Logistic Regression | 0.01780 | 0.01971 |
 | Gradient Boosting | 0.01750 | 0.02028 |
 | Feedforward NN | 0.01710 | 0.01968 |
 | Weighted Average Ensemble | 0.01675 | 0.01901 |
-| Stacking Ensemble  | TBD | TBD |
+| Stacking Ensemble | 0.01685 | 0.01949 |
