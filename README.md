@@ -75,7 +75,7 @@ We used the `sklearn` implementation of logistic regression. For logistic regres
 ### Gradient Boosting
 file: `gbm-moa.ipynb`
 
-For Gradient Boosting we used `lightgbm`'s implementation. Similarly to logistic regression, we had to train 206 models separately for each target, but this time manually instead of using MultiOutpuClassifier.
+For Gradient Boosting we used `lightgbm`'s implementation. Similarly to logistic regression, we had to train 206 models separately for each target, but this time manually instead of using MultiOutputClassifier.
 
 ### Feedforward Neural Network
 file: `fnn-moa.ipynb`
