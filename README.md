@@ -44,6 +44,26 @@ The Weighted Average Ensemble requires all of the above with the exception of ke
 
 TODO: add stacking ensemble.
 
+## Used Kernels
+
+Logistic Regression:
+
+- https://www.kaggle.com/sg1993/logistic-regression-model/notebook
+- https://www.kaggle.com/barteksadlej123/basic-logistic-regression
+
+Gradient Boosting:
+
+- https://www.kaggle.com/nroman/moa-lightgbm-206-models
+- https://www.kaggle.com/pavelvpster/moa-lgb-optuna
+
+Neural Network:
+
+- https://www.kaggle.com/simakov/keras-multilabel-neural-network-v1-2/notebook
+- https://www.kaggle.com/elcaiseri/moa-keras-multilabel-classifier-nn-starter/notebook
+- https://www.kaggle.com/gogo827jz/moa-lstm-pure-transformer-fast-and-not-bad/notebook?scriptVersionId=42679125
+
+[Also ensemble related other source](https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-for-ensemble-models/)
+
 ## Methodology
 We have created 3 base models: Logistic Regression, Gradient Boosting and a relatively simple Feedforward Neural Network. For every single model onehot encoding is used. Normalization seemed to affect the results of each model differently. Using PCA components worsened performance for every model in our implementation.
 
