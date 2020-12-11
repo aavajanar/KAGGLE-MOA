@@ -68,15 +68,23 @@ Neural Network:
 We have created 3 base models: Logistic Regression, Gradient Boosting and a relatively simple Feedforward Neural Network. For every single model onehot encoding is used. Normalization seemed to affect the results of each model differently. Using PCA components worsened performance for every model in our implementation.
 
 ### Logistic Regression
+file: `logreg-moa.ipynb`
+
 We used the `sklearn` implementation of logistic regression. For logistic regression standardization offered a significant performance boost. As with most of the classical machine learning algorithm implementations, sklearn's logistic regression does not support multi-label classification. In order to overcome this we had to use sklearn's MultiOutputClassifier, which basically fits the model for each target separately. This means that we essentially created 206 models, each one predicting one of the 206 targets. This is one of the major downsides to classical machine learning methods as fitting 206 models on a dataset this size takes a considerable amount of time when compared to neural networks, especially as a lot of classical ML methods don't support GPU learning, but NNs do.
 
 ### Gradient Boosting
+file: `gbm-moa.ipynb`
+
 For Gradient Boosting we used `lightgbm`'s implementation. Similarly to logistic regression, we had to train 206 models separately for each target, but this time manually instead of using MultiOutpuClassifier.
 
 ### Feedforward Neural Network
+file: `fnn-moa.ipynb`
+
 The Neural Network was implemented using `keras` and tuned with the help of `kerastuner`. The Neural Network uses 3 hidden layers, a BatchNormalization layer right after the Input layer, an output layer with 206 neurons(one for each target) and a dropout layer before each hidden and output layer. Standardization of data seemed to, at best, offer no performance benefits and possible slightly reduced performance.
 
 ### Weighted Average Ensemble
+file: `3model-weighted-average-moa.ipynb`
+
 This model uses the results from the three models mentioned above by multiplying the results by a weight and adding them all together. The weights were chose based on the performance of the base model and experimentation.
 The weights are following:
 
@@ -85,6 +93,8 @@ The weights are following:
 - Neural Network: 0.4
 
 ### Stacking Ensemble
+file: ``
+
 TODO
 
 ## Results
