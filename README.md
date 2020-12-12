@@ -90,10 +90,14 @@ The weights are following:
 - Gradient Boosting: 0.33
 - Neural Network: 0.4
 
+![Weighted Averages Ensemble visualization](https://github.com/aavajanar/KAGGLE-MOA/blob/main/pics/weighted-ensemble.png?raw=true)
+
 ### Stacking Ensemble
 file: `nn-gbm-logreg-nn-stacking-moa.ipynb`
 
 This model uses the previously made FNN, GBM and Logistic Regression models by using the predictions from those models to build a new model. This is achieved by dividing the train set into 3 parts and using 2 parts to predict the third. This is done for every part and we get the train and test set predictions. We do this 3 times, once for each model, and combine all the train set predictions with each other and then all the test set predictions with each other. Then finally we build a new model, in this case a feedforward neural network, and fit it on the new train prediction set. Then we use the test predictions to predict the final target values.
+
+![Stacking Ensemble visualization](https://github.com/aavajanar/KAGGLE-MOA/blob/main/pics/stacked-ensemble.png?raw=true)
 
 ## Results
 The results were ran on both public test data and private test data on Kaggle. Performance metric is meanwise column log loss. Our initial goal was to reach 0.02 for public test data and we were hoping to reach 0.019. Results for all the model met our goals and the Weighted Average Ensemble even met our extended goal. From the results we can see that neural networks (even simple ones) seem to perform better on this dataset than classical approaches. It also seems like there is a lot of performance to be gained from ensembling different types of models together, even through a simple method like weighted averaging. We expected a bit better performance out of the Stacking Ensemble when compared to the weighted average, but the similar performance between the models could be explained by the fact that a stacking ensemble is more difficult to optimize than a weighted average ensemble so there is more potential for better performance.
