@@ -78,7 +78,7 @@ For Gradient Boosting we used `lightgbm`'s implementation. Similarly to logistic
 ### Feedforward Neural Network
 file: `fnn-moa.ipynb`
 
-The Neural Network was implemented using `keras` and tuned with the help of `kerastuner`. The Neural Network uses 3 hidden layers, a BatchNormalization layer right after the Input layer, an output layer with 206 neurons(one for each target) and a dropout layer before each hidden and output layer. Standardization of data seemed to, at best, offer no performance benefits and possible slightly reduced performance.
+The Neural Network was implemented using `keras` and tuned with the help of `kerastuner`. The Neural Network uses 3 hidden layers, a BatchNormalization layer right after the Input layer, an output layer with 206 neurons(one for each target) and a dropout layer before each hidden and output layer. Standardization of data seemed to, at best, offer no performance benefits and possibly slightly reduces the performance of the model.
 
 ### Weighted Average Ensemble
 file: `3model-weighted-average-moa.ipynb`
