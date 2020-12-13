@@ -44,6 +44,12 @@ The Ensembles requires all of the above with the exception of kerastuner.
 
 ## Used Kernels
 
+Data Analysis:
+
+- https://www.kaggle.com/kushal1506/moa-prediction-complete-walkthrough-eda-ensemble
+- https://www.kaggle.com/amiiiney/drugs-moa-classification-eda#4-Targets-(MoA)
+- https://www.kaggle.com/isaienkov/mechanisms-of-action-moa-prediction-eda
+
 Logistic Regression:
 
 - https://www.kaggle.com/sg1993/logistic-regression-model/notebook
