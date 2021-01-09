@@ -23,7 +23,7 @@ In addition the `path` variable needs to be changed to the location of the data 
 ### Software
 Running the code requires using Python3 Jupyter notebooks. The results were obtained from the Kaggle test data with hidden targets so all of the development and execution was done on Kaggle.
 
-All of the modules require the following modules:
+All of the models require the following modules:
 
 - numpy
 - pandas
